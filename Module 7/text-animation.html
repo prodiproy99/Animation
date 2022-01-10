@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Animation</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+         
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #252839;
+
+        }
+        /* .first-word{
+            font-size: 10vw;
+            text-transform: uppercase;
+            color: #ffffff;
+            position: relative;
+            
+        } */
+         h2{
+            font-size: 10vw;
+            text-transform: uppercase;
+            color: #252839;
+            position: relative;
+            -webkit-text-stroke: 0.3vw #383d52
+            
+        }
+        h2::before{
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            color: #01fe87;
+            -webkit-text-stroke: 0vw #4559aa;
+            border-right: 2px solid #01fe87;
+            overflow: hidden;
+            animation: animate 6s linear infinite;
+
+        }
+        @keyframes animate{
+            0%,10%,100%{
+                width: 0;
+            }
+            70%,90%{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- <span class="first-word">I am</span> -->
+        <h2 data-text="Creative...">Creative...</h2>
+     
+</body>
+</html>
